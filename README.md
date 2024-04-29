@@ -5,7 +5,7 @@ For my undergraduate project at Queen Mary University, I am working in a group t
 _Figure 1. Picture of the full system which includes the sensor and Arduino used._
 
 # Videos of experiments
-<img src="pressure-matrix-visualization-youtube-thumbnail.PNG" width="300">
+[<img src="tactile-sensing-experiments.PNG" width="300">](https://youtube.com/shorts/MihSXzN0GXc?feature=share)[<img src="tactile-visualization-real-time-thumbnail.PNG" width="300">](https://youtube.com/shorts/EydNylx5SwU?feature=share)[<img src="haptic-feedback-tactile-sensing-thumbnail.PNG" width="300">](https://youtu.be/KCjPz4si9O4)
 
 ## Initial experiments
 
@@ -21,7 +21,8 @@ _Figure 3. Construction and layers of the pressure matrix_
 
 Following an online tutorial [2], I constructed my original prototype of the sensor out of copper tape, Velostat, and paper. In Arduino, the code provided allowed the Arduino to receive 9 sensor values and print them in a line before repeating. This solution worked quite well but was difficult to integrate with the haptic system due to the values being in a loop and difficult to call. The main algorithms of this code are explained in the mermaind flowchart below. Please click the image to be taken to the code.
 
-[<img src="" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/tree/main/pressure-matrix-attempt1)
+[<img src="Flowchart explaining how sensor collects data.PNG" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/tree/main/pressure-matrix-attempt1)
+
 _Figure 4. Mermaid flowchart to explain original looping data acquisition code in Arduino_
 
 ## Data Acquisition and Data Visualization
@@ -29,11 +30,13 @@ _Figure 4. Mermaid flowchart to explain original looping data acquisition code i
 In the final Arduino code, I focused on data acquisition that would be useful not only for my system but also for integrating with the haptic feedback system. I needed to receive all 9 sensor values so that the haptic system could use it for the DC motor and vibration motor modules. To do this, I updated the code the read and store each value in an array. The values are then concatenated into string values. This was done so that MATLAB would be able to easily receive the data and later convert it back into an integer value. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
 
 [<img src="final tactile sensing flowchart - arduino.PNG" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/blob/main/nine_sensor_points_final_attempt.ino)
+
 _Figure 5. Mermaid flowchart to explain data acquisition code in Arduino_
 
 Finally, I used MATLAB for data visualization. The code runs in a cyclic manner and begins by clearing the Command Window in order to establish a fresh connection with my Arduino. The code functions using a loop that monitors for new data form the Arduino. Once it receives it, it converts it from a string to an integer which is then parsed and distributed the originally initialized 3x3 matrix. The matrix is updated with each loop and allows for real-time visualization. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
 
-[<img src="data-visualization-flowchart.PNG" width="300">](https://github.com/nynakenyetta/undegrad_thesis_project/blob/main/communicating_with_matlab_final.m)
+[<img src="data-visualization-flowchart.PNG" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/blob/main/communicating_with_matlab_final.m)
+
 _Figure 6. Mermaid flowchart to explain data visualisation code in MATLAB_
 
 ## Future work
