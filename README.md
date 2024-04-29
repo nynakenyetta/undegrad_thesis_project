@@ -5,7 +5,7 @@ For my undergraduate project at Queen Mary University, I am working in a group t
 _Figure 1. Picture of the full system which includes the sensor and Arduino used._
 
 ## Videos of experiments
-[<img src="tactile-sensing-experiments.PNG" width="300">](https://youtube.com/shorts/MihSXzN0GXc?feature=share)[<img src="tactile-visualization-real-time-thumbnail.PNG" width="300">](https://youtube.com/shorts/EydNylx5SwU?feature=share)[<img src="haptic-feedback-tactile-sensing-thumbnail.PNG" width="300">](https://youtu.be/KCjPz4si9O4)
+[<img src="tactile-sensing-experiments.PNG" width="250">](https://youtube.com/shorts/MihSXzN0GXc?feature=share)[<img src="tactile-visualization-real-time-thumbnail.PNG" width="250">](https://youtube.com/shorts/EydNylx5SwU?feature=share)[<img src="haptic-feedback-tactile-sensing-thumbnail.PNG" width="250">](https://youtu.be/KCjPz4si9O4)
 
 ## Initial experiments
 
@@ -16,7 +16,7 @@ Before discovering the pressure matrix, I initially tried using an FSR. Force se
 
 ## Constructing the pressure matrix
 
-<img src="constructing-prototype.PNG" width="300">
+<img src="constructing-prototype.PNG" width="500">
 _Figure 3. Construction and layers of the pressure matrix_
 
 Following an online tutorial [2], I constructed my original prototype of the sensor out of copper tape, Velostat, and paper. In Arduino, the code provided allowed the Arduino to receive 9 sensor values and print them in a line before repeating. This solution worked quite well but was difficult to integrate with the haptic system due to the values being in a loop and difficult to call. The main algorithms of this code are explained in the mermaind flowchart below. Please click the image to be taken to the code.
