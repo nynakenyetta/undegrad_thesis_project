@@ -6,8 +6,7 @@ _Figure 1. Picture of the full system which includes the sensor and Arduino used
 
 ## Initial experiments
 
-<img src="circuit-of-arduino-and-fsr.png
-" width="300">
+<img src="circuit-of-arduino-and-fsr.PNG" width="300">
 _Figure 2. (A) The FSR circuit (B) The sourced schematic [1]_
 
 Before discovering the pressure matrix, I initially tried using an FSR. Force sensor resistors (FSR) are commonly used in tactile sensing in a variety of forms. FSRs are a polymer thick film (PTF) device that record decreases in resistance when a force is applied to its active surface, see Figure 3. These sensors can be either square or circular, for my application I used a small, circular one. They are cheap and quite robust but can only be used on flat surfaces. Applying them to a curved surface may cause pre-loading that will need to be measured and accounted for. Similar to a pressure sensor, they can only sense how much force they have received and not where. A further disadvantage is that they can only sense changes in force in a one dimensional space. Not at an angle and only from one surface.
