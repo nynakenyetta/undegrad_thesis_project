@@ -1,7 +1,7 @@
 # Tactile Array Sensor (Pressure Matrix) for Myoelectric A Prosthetic Hand
 For my undergraduate project at Queen Mary University, I am working in a group to create an affordable myoelectric prosthetic hand for a trans-radial amputee. Many of the options currently available on the market are extremely expensive. We aim to create an alternative that is not only less expensive but gives users a sense of touch. This tactile sensor is made cheaply and can be easily replaced if issues arise.
 
-<img src="picture-of-sensor-and-arduino.PNG" width="300">
+<img src="picture-of-sensor-and-arduino.PNG" width="300" align="center">
 _Figure 1. Picture of the full system which includes the sensor and Arduino used._
 
 ## Initial experiments
@@ -24,8 +24,8 @@ Following an online tutorial [2], I constructed my original prototype of the sen
 
 In the final Arduino code, I focused on data acquisition that would be useful not only for my system but also for integrating with the haptic feedback system. I needed to receive all 9 sensor values so that the haptic system could use it for the DC motor and vibration motor modules. To do this, I updated the code the read and store each value in an array. The values are then concatenated into string values. This was done so that MATLAB would be able to easily receive the data and later convert it back into an integer value. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
 
-<p align="center"><img src="constructing-prototype.png
-" width="300"></p>
+<img src="constructing-prototype.png
+" width="300">
 
 Finally, I used MATLAB for data visualization. The code runs in a cyclic manner and begins by clearing the Command Window in order to establish a fresh connection with my Arduino. The code functions using a loop that monitors for new data form the Arduino. Once it receives it, it converts it from a string to an integer which is then parsed and distributed the originally initialized 3x3 matrix. The matrix is updated with each loop and allows for real-time visualization. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
 
