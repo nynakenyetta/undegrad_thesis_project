@@ -4,35 +4,43 @@ For my undergraduate project at Queen Mary University, I am working in a group t
 <img src="picture-of-sensor-and-arduino.PNG" width="300">
 _Figure 1. Picture of the full system which includes the sensor and Arduino used._
 
+# Videos of experiments
+<img src="pressure-matrix-visualization-youtube-thumbnail.PNG" width="300">
+
 ## Initial experiments
 
-<img src="circuit-of-arduino-and-fsr.PNG" width="300">
+<img src="circuit-of-arduino-and-fsr.PNG" width="500">
 _Figure 2. (A) The FSR circuit (B) The sourced schematic [1]_
 
 Before discovering the pressure matrix, I initially tried using an FSR. Force sensor resistors (FSR) are commonly used in tactile sensing in a variety of forms. FSRs are a polymer thick film (PTF) device that record decreases in resistance when a force is applied to its active surface, see Figure 3. These sensors can be either square or circular, for my application I used a small, circular one. They are cheap and quite robust but can only be used on flat surfaces. Applying them to a curved surface may cause pre-loading that will need to be measured and accounted for. Similar to a pressure sensor, they can only sense how much force they have received and not where. A further disadvantage is that they can only sense changes in force in a one dimensional space. Not at an angle and only from one surface.
 
 ## Constructing the pressure matrix
 
-<img src="constructing-prototype.png
-" width="300">
+<img src="constructing-prototype.PNG" width="300">
 _Figure 3. Construction and layers of the pressure matrix_
 
 Following an online tutorial [2], I constructed my original prototype of the sensor out of copper tape, Velostat, and paper. In Arduino, the code provided allowed the Arduino to receive 9 sensor values and print them in a line before repeating. This solution worked quite well but was difficult to integrate with the haptic system due to the values being in a loop and difficult to call. The main algorithms of this code are explained in the mermaind flowchart below. Please click the image to be taken to the code.
+
+[<img src="" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/tree/main/pressure-matrix-attempt1)
+_Figure 4. Mermaid flowchart to explain original looping data acquisition code in Arduino_
 
 ## Data Acquisition and Data Visualization
 
 In the final Arduino code, I focused on data acquisition that would be useful not only for my system but also for integrating with the haptic feedback system. I needed to receive all 9 sensor values so that the haptic system could use it for the DC motor and vibration motor modules. To do this, I updated the code the read and store each value in an array. The values are then concatenated into string values. This was done so that MATLAB would be able to easily receive the data and later convert it back into an integer value. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
 
-<img src="constructing-prototype.png
-" width="300">
+[<img src="final tactile sensing flowchart - arduino.PNG" width="600">](https://github.com/nynakenyetta/undegrad_thesis_project/blob/main/nine_sensor_points_final_attempt.ino)
+_Figure 5. Mermaid flowchart to explain data acquisition code in Arduino_
 
 Finally, I used MATLAB for data visualization. The code runs in a cyclic manner and begins by clearing the Command Window in order to establish a fresh connection with my Arduino. The code functions using a loop that monitors for new data form the Arduino. Once it receives it, it converts it from a string to an integer which is then parsed and distributed the originally initialized 3x3 matrix. The matrix is updated with each loop and allows for real-time visualization. The mermaid flowchart below explains the main algorithms. Please click the image to be taken to the code.
+
+[<img src="data-visualization-flowchart.PNG" width="300">](https://github.com/nynakenyetta/undegrad_thesis_project/blob/main/communicating_with_matlab_final.m)
+_Figure 6. Mermaid flowchart to explain data visualisation code in MATLAB_
 
 ## Future work
 Going forward, I am working on using the 3x3 matrices generated through my MATLAB visualization code to train a convolutional neural network (CNN). Through this, I hope to create a separate system for object classification that can later be used to improve the user's experience.
 
 
 
-##References
+## References
 1. In-Depth: Interfacing Force Sensing Resistor (FSR) with Arduino [Internet]. Last Minute Engineers. 2020. Available from: https://lastminuteengineers.com/fsr-arduino-tutorial/#:~:text=4.9V-
 2. HOW TO GET WHAT YOU WANT [Internet]. Available from: https://www.kobakant.at/DIY/?p=7443
