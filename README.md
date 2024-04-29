@@ -4,7 +4,7 @@ For my undergraduate project at Queen Mary University, I am working in a group t
 <img src="picture-of-sensor-and-arduino.PNG" width="300">
 _Figure 1. Picture of the full system which includes the sensor and Arduino used._
 
-# Videos of experiments
+## Videos of experiments
 [<img src="tactile-sensing-experiments.PNG" width="300">](https://youtube.com/shorts/MihSXzN0GXc?feature=share)[<img src="tactile-visualization-real-time-thumbnail.PNG" width="300">](https://youtube.com/shorts/EydNylx5SwU?feature=share)[<img src="haptic-feedback-tactile-sensing-thumbnail.PNG" width="300">](https://youtu.be/KCjPz4si9O4)
 
 ## Initial experiments
